@@ -23,7 +23,7 @@ const Products = ({ cat, filters, sort }) => {
             ? `${import.meta.env.VITE_REACT_APP_BACKEND_URL || ""}/api/products?category=${cat}`
             : `${import.meta.env.VITE_REACT_APP_BACKEND_URL || ""}/api/products`
         );
-        setProducts(res.data);
+        setProducts(Array.isArray(res.data) ? res.data : res.data.products || []);
       } catch (err) {}
     };
     getProducts();
