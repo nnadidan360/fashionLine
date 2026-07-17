@@ -5,7 +5,5 @@ export default defineConfig({
   plugins: [react({ include: '**/*.{jsx,js,tsx,ts}' })],
   build: { outDir: 'dist' },
   server: { port: 3000 },
-  define: {
-    'process.env': 'import.meta.env',
-  },
 })
+
